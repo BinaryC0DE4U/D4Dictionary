@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D4Dictionary</title>
+    <link rel="icon" href="Dictionary.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+
+<body>
+
+    <!-- Loader (Visible Initially) -->
+    <div id="loader">
+        <dotlottie-player src="https://lottie.host/1ed18ab0-8cdb-4994-8c15-a1944327f758/stRplNsixZ.lottie"
+            background="transparent" speed="1" style="width: 300px; height: 300px" autoplay>
+        </dotlottie-player>
+    </div>
+
+    <!-- Header (Always Visible) -->
+    <header class="header">
+        <div class="logo">
+            <img src="Dictionary.png" alt="Dictionary Logo">
+            <h1>D4Dictionary</h1>
+        </div>
+        <button id="theme-toggle">🌙</button>
+    </header>
+
+    <!-- Main Content (Hidden Initially) -->
+    <div class="container" id="main-container">
+        <div class="search-box">
+            <input type="text" id="wordInput" placeholder="Enter a word..." autofocus>
+            <button onclick="searchWord()">🔍</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <button id="audioBtn" class="toggle-btn" style="display: none;" onclick="toggleAudio()">
+        🔊 Play Pronounce
+    </button>
+    <audio id="audioPlayer"></audio>
+
+    <!-- Footer (Always Visible) -->
+    <footer class="footer">
+        <div class="social-links">
+            <h3>To Connect With Me</h3>
+            <a href="https://www.linkedin.com/in/mr-dhananjay-patil-0172902a2/" target="_blank"
+                class="social-icon linkedin">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/BinaryC0DE4U" target="_blank" class="social-icon github">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <p>Powered by <strong>D4Dictionary</strong> & <strong>BinaryBrains</strong></p>
+        <p>&copy; 2025 All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Wait for the Lottie animation to complete
+        document.addEventListener("DOMContentLoaded", function () {
+            const loader = document.getElementById("loader");
+            const mainContainer = document.getElementById("main-container");
+            const lottiePlayer = document.querySelector("dotlottie-player");
+
+            mainContainer.style.display = "none"; // Hide container initially
+
+            // Once Lottie animation finishes, hide loader and show container
+            lottiePlayer.addEventListener("complete", function () {
+                loader.style.display = "none"; // Hide loader
+                mainContainer.style.display = "block"; // Show only container
+            });
+        });
+    </script>
+
+</body>
+
+</html>

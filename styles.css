@@ -1,0 +1,256 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Simple Background */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 80px;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    background: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.header h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 22px;
+        
+    }
+}
+
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 7px;
+    
+}
+
+/* Toggle Button */
+#theme-toggle {
+    padding: 8px 12px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: #333;
+}
+
+/* No hover effect on toggle button */
+#theme-toggle:hover {
+    color: inherit;
+}
+
+/* Main Container */
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 90%;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-box button {
+    padding: 10px 15px;
+    background: #f4f4f4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #aaa;
+  
+}
+
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #222;
+    color: #f4f4f4;
+}
+
+.dark-mode .header {
+    background: #333;
+    border-bottom: 2px solid #444;
+}
+
+.dark-mode #theme-toggle {
+    background: transparent;
+    color: #f4f4f4;
+}
+
+/* No hover effect in dark mode */
+.dark-mode #theme-toggle:hover {
+    background: transparent;
+    color: inherit;
+}
+
+.dark-mode .search-box input {
+    background: #444;
+    color: white;
+    border: 1px solid #666;
+}
+
+.dark-mode .search-box button {
+    background: #444;
+}
+
+
+/* Fixed Footer */
+.footer {
+    width: 100%;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 15px 0;
+    font-size: 14px;
+    transition: background 0.3s, color 0.3s;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+@media (max-width: 600px) {
+    .footer p {
+        display: block;
+    }
+}
+
+
+/* Social Media Links */
+.social-links {
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #333;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon.linkedin:hover {
+    color: #0066ff; /* LinkedIn Blue */
+    transform: scale(1.2);
+}
+
+.social-icon.github:hover {
+    color: #0066ff  ; /* GitHub Black */
+    transform: scale(1.2);
+}
+
+/* Dark Mode for Footer */
+.dark-mode .footer {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+.dark-mode .social-icon {
+    color: #f4f4f4;
+}
+
+.dark-mode .social-icon.linkedin:hover {
+    color: #3987fb; /* Brighter LinkedIn Blue */
+}
+
+.dark-mode .social-icon.github:hover {
+    color: #3987fb; /* White */
+}
+.social-links a {
+    text-decoration: none; /* Removes underline/dash effect */
+    outline: none; /* Removes focus outline */
+}
+/* Ensure main content expands */
+.container {
+    flex: 1; /* Pushes the footer down */
+}
+.toggle-btn {
+    padding: 10px 20px;
+    font-size: 15px;
+    
+    border-radius: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #aaa;
+    color: rgb(0, 0, 0); /* Default text color */
+    
+    display: none; /* Hide initially */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* When active (playing), change color */
+.toggle-btn.active {
+   
+    color: rgb(0, 0, 0); /* Text color white */
+}
+
+/* Adjust colors for dark mode */
+.dark-mode .toggle-btn {
+
+    color: rgb(255, 255, 255); /* Black text */
+}
+
+.dark-mode .toggle-btn.active {
+
+    color: rgb(255, 255, 255); /* Text remains white */
+}
+
+/* Loader Styling */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #222; /* White Background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* Hide container initially */
+#main-container {
+    display: none;
+}
